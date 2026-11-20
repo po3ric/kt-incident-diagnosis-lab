@@ -1,0 +1,68 @@
+{
+  "version": "4",
+  "groupKey": "{}/{category=\"site\"}:{category=\"site\", env=\"aws\"}",
+  "truncatedAlerts": 0,
+  "status": "firing",
+  "receiver": "site-critical",
+  "groupLabels": { "category": "site", "env": "aws" },
+  "commonLabels": { "category": "site", "env": "aws", "severity": "critical" },
+  "commonAnnotations": {},
+  "externalURL": "http://monitoring:9093",
+  "alerts": [
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "AWSOriginDown",
+        "category": "site",
+        "env": "aws",
+        "severity": "critical",
+        "target_name": "aws-alb",
+        "instance": "http://alb.example.com/readyz",
+        "job": "blackbox-http"
+      },
+      "annotations": {
+        "summary": "AWS ALB(원본) 응답 없음",
+        "description": "AWS ALB 직접 점검이 1분 이상 실패했습니다."
+      },
+      "startsAt": "2026-11-30T14:03:15.000+09:00",
+      "endsAt": "0001-01-01T00:00:00Z",
+      "generatorURL": "http://monitoring:9090/graph?g0.expr=...",
+      "fingerprint": "a1b2c3d4e5f60718"
+    },
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "ServiceDomainDown",
+        "category": "site",
+        "env": "aws",
+        "severity": "critical",
+        "target_name": "service-domain"
+      },
+      "annotations": {
+        "summary": "서비스 도메인 접속 실패",
+        "description": "Cloudflare 경유 서비스 도메인 점검이 1분 이상 실패했습니다."
+      },
+      "startsAt": "2026-11-30T14:03:20.000+09:00",
+      "endsAt": "0001-01-01T00:00:00Z",
+      "generatorURL": "http://monitoring:9090/graph?g0.expr=...",
+      "fingerprint": "0f1e2d3c4b5a6978"
+    },
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "AWSMetricsMissing",
+        "category": "site",
+        "env": "aws",
+        "severity": "critical"
+      },
+      "annotations": {
+        "summary": "AWS 지표 수집 중단",
+        "description": "AWS Agent에서 보내는 지표가 1분 이상 들어오지 않았습니다."
+      },
+      "startsAt": "2026-11-30T14:03:25.000+09:00",
+      "endsAt": "0001-01-01T00:00:00Z",
+      "generatorURL": "http://monitoring:9090/graph?g0.expr=...",
+      "fingerprint": "5a6b7c8d9e0f1a2b"
+    }
+  ]
+}

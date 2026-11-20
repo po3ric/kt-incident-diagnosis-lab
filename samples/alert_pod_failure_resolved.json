@@ -1,0 +1,18 @@
+{
+  "version": "4",
+  "status": "resolved",
+  "receiver": "diagnosis-engine",
+  "groupLabels": {"alertname": "PodNotReady"},
+  "commonLabels": {"alertname": "PodNotReady", "severity": "critical"},
+  "commonAnnotations": {"summary": "Coupon app pod is not ready"},
+  "alerts": [
+    {
+      "status": "resolved",
+      "labels": {"alertname": "PodNotReady", "severity": "critical", "namespace": "coupon", "pod": "coupon-app-abc12"},
+      "annotations": {"summary": "Pod coupon-app-abc12 is not ready"},
+      "startsAt": "2026-11-18T09:00:00Z",
+      "endsAt": "2026-11-18T09:05:00Z",
+      "fingerprint": "a1b2c3d4e5f6"
+    }
+  ]
+}

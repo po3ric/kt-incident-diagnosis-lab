@@ -1,0 +1,24 @@
+{
+  "event_id": "evt-20261130-0001",
+  "incident_id": "inc-20261130-0001",
+  "failure_type": "AWS_SITE_FAILURE",
+  "source": "diagnosis-engine",
+  "detected_at": "2026-11-30T14:03:15+09:00",
+  "description": "AWS 사이트 장애: 서비스 도메인·ALB 점검 실패, AWS 지표 수집 중단",
+  "diagnosis_result": {
+    "rule": "domain_fail_and_alb_fail",
+    "alerts": ["AWSOriginDown", "ServiceDomainDown", "AWSMetricsMissing"]
+  },
+  "evidence": {
+    "service_domain_probe_success": 0,
+    "aws_alb_probe_success": 0,
+    "aws_metrics_absent": true
+  },
+  "replication_lag_seconds": 12,
+  "ready_pods": 2,
+  "desired_pods": 2,
+  "context": {
+    "failed_env": "aws",
+    "standby_env": "onprem"
+  }
+}
